@@ -40,7 +40,7 @@ node {
     }
 
     stage('Deploy Image') {
-        sh "/usr/local/bin/deploy.sh 8080:8080 v" +currentBuild.number + " garage.chriswalker.dev:v" + currentBuild.number
+        sh "/usr/local/bin/deploy.sh 8090:8080 v" +currentBuild.number + " garage.chriswalker.dev:v" + currentBuild.number
     }
 
     stage('Verify Image') {
