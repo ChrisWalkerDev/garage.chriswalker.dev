@@ -12,7 +12,7 @@ node {
 
     stage('Test') {
         app.inside {
-            sh "npm run test"
+            sh "ng test"
         }
     }
 
