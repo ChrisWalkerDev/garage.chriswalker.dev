@@ -20,6 +20,6 @@ FROM nginx:latest as ngi
 
 # Copying compiled code and nginx config to different folder
 COPY --from=build /dist/src/app/dist/garage.chriswalker.dev/browser /usr/share/nginx/html
-COPY /nginx.conf  /etc/nginx/conf.d/default.conf
+COPY /nginx.conf  /etc/nginx/templates/nginx.conf.template
 
 EXPOSE 8080
