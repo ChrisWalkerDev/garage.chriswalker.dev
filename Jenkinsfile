@@ -35,12 +35,12 @@ node {
     }
 
     stage('Deploy Image') {
-        sh "/usr/local/bin/deploy.sh 8090:8080 v" + currentBuild.number + " " + appName + ":v" + currentBuild.number
+        sh "/usr/local/bin/deploy.sh 8090:8080 " + currentBuild.number + " " + appName + ":v" + currentBuild.number
     }
 
     stage('Verify Image') {
         sleep(time: 10, unit:"SECONDS")
-        sh "/usr/local/bin/verify_image.sh https://" + appName + "/version v" + currentBuild.number
+        sh "/usr/local/bin/verify_image.sh https://" + appName + "/version " + currentBuild.number
     }
 
 }
