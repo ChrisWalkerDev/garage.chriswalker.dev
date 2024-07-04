@@ -1,4 +1,4 @@
-FROM node:20.14-alpine AS build
+FROM node:slim AS build
 
 # Create app directory
 WORKDIR /dist/src/app

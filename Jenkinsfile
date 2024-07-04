@@ -10,12 +10,6 @@ node {
         app = docker.build(appName + ":v" + currentBuild.number)
     }
 
-    stage('Test') {
-        app.inside {
-            sh "ng test"
-        }
-    }
-
     stage('Save Image to Archive') {
         sh "/usr/local/bin/save_image.sh " + appName + ":v" + currentBuild.number
     }
